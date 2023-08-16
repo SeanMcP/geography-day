@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Geography Day</title>
+    <!-- Emoji favicon -->
+    <link rel="shortcut icon" href="https://fav.farm/🗺️" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Geologica:wght@200;700&family=Lato&display=swap"
+        rel="stylesheet" />
+    <style>
+        body {
+            font-family: Geologica, system-ui, -apple-system, BlinkMacSystemFont,
+                "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+                "Helvetica Neue", sans-serif;
+        }
+
+        main {
+            margin-inline: auto;
+            max-width: 80ch;
+            padding: 1rem;
+        }
+
+        a[aria-label="world map"] {
+            animation: fade 4s ease-in-out infinite;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            display: block;
+            height: 400px;
+            transition: all 0.2s ease-in-out;
+        }
+
+        a[aria-label="world map"]:is(:focus, :hover) {
+            scale: 1.1;
+        }
+
+        h1 {
+            font-size: 3rem;
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+        h1,h2 {
+            margin-block-start: 1em;
+            margin-block-end: 1rem;
+        }
+
+        @keyframes fade {
+            0% {
+                opacity: 0;
+            }
+
+            5% {
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 1;
+            }
+
+            90% {
+                opacity: 1;
+            }
+
+            95% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 0;
+            }
+        }
+
+        nav {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+        }
+
+        nav a {
+            background: hsla(0, 0%, 0%, 0.25);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-blend-mode: darken;
+            border-radius: 4px;
+            color: white;
+            display: flex;
+            height: 10rem;
+            overflow: hidden;
+            position: relative;
+            transition: scale 0.2s ease-in-out;
+        }
+
+        nav a:not(:focus,:hover,:visited) {
+            text-decoration: none;
+        }
+
+        nav a:is(:focus,:hover) {
+            scale: 1.1;
+        }
+
+        nav a[data-highlighted] {
+            box-shadow: 0 0 2rem hsl(51, 100%, 60%);
+        }
+
+        nav a[data-highlighted]::before {
+            content: "⭐️";
+            font-size: 1.5em;
+            position: absolute;
+            top: 0.25rem;
+            right: 0.25rem;
+        }
+
+        nav a span {
+            align-self: flex-end;
+            background: linear-gradient(to right, hsla(0, 0%, 0%, 0.75) 25%, transparent);
+            display: block;
+            flex: 1;
+            padding: 0.5rem;
+        }
+
+        nav a[href$="africa"] {
+            background-image: url(images/af-2.jpg);
+        }
+
+        nav a[href$="asia"] {
+            background-image: url(images/as-1.jpg);
+        }
+
+        nav a[href$="europe"] {
+            background-image: url(images/eu-1.jpg);
+        }
+
+        nav a[href$="oceania"] {
+            background-image: url(images/oc-2.jpg);
+        }
+
+        nav a[href$="northamerica"] {
+            background-image: url(images/na-1.jpg);
+        }
+
+        nav a[href$="southamerica"] {
+            background-image: url(images/sa-1.jpg);
+        }
+
+        nav a[href$="world"] {
+            background-image: url(images/world.jpg);
+        }
+
+        nav a[href$="capitals"] {
+            background-image: url(images/capitals.jpg);
+        }
+
+        nav a[href$="states"] {
+            background-image: url(images/usa.jpg);
+        }
+
+        nav a[href$="caprovinces"] {
+            background-image: url(images/canada.jpg);
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <a aria-label="world map" href="" target="_blank"></a>
+        <h1>Geography Day</h1>
+        <h2 id="#continents">Continents</h2>
+        <nav aria-labelledby="contents">
+            <a href="https://www.sporcle.com/games/g/africa" target="_blank"><span>Africa</span></a>
+            <a href="https://www.sporcle.com/games/g/asia" target="_blank"><span>Asia</span></a>
+            <a href="https://www.sporcle.com/games/g/europe" target="_blank"><span>Europe</span></a>
+            <a href="https://www.sporcle.com/games/g/oceania" target="_blank"><span>Oceania</span></a>
+            <a href="https://www.sporcle.com/games/g/northamerica" target="_blank"><span>North America</span></a>
+            <a href="https://www.sporcle.com/games/g/southamerica" target="_blank"><span>South America</span></a>
+        </nav>
+        <h2 id="around-the-world">Around the world</h2>
+        <nav aria-labelledby="around-the-world">
+            <a href="https://www.sporcle.com/games/g/world" target="_blank"><span>Countries of the world</span></a>
+            <a href="https://www.sporcle.com/games/g/capitals" target="_blank"><span>World capitals</span></a>
+            <a href="https://www.sporcle.com/games/g/states" target="_blank"><span>United States</span></a>
+            <a href="https://www.sporcle.com/games/g/caprovinces" target="_blank"><span>Canadian Provinces</span></a>
+        </nav>
+    </main>
+</body>
+<script>
+    const images = [
+        [
+            "https://en.wikipedia.org/wiki/File:Mercator_projection_SW.jpg",
+            "https://upload.wikimedia.org/wikipedia/commons/f/f4/Mercator_projection_SW.jpg",
+        ],
+        [
+            "https://en.wikipedia.org/wiki/File:Mollweide_projection_SW.jpg",
+            "https://upload.wikimedia.org/wikipedia/commons/9/9e/Mollweide_projection_SW.jpg",
+        ],
+        [
+            "https://en.wikipedia.org/wiki/File:Azimuthal_equidistant_projection_SW.jpg",
+            "https://upload.wikimedia.org/wikipedia/commons/e/ec/Azimuthal_equidistant_projection_SW.jpg",
+        ],
+        [
+            "https://en.wikipedia.org/wiki/File:Gall%E2%80%93Peters_projection_SW.jpg",
+            "https://upload.wikimedia.org/wikipedia/commons/3/34/Gall%E2%80%93Peters_projection_SW.jpg",
+        ],
+        [
+            "https://en.wikipedia.org/wiki/File:Robinson_projection_SW.jpg",
+            "https://upload.wikimedia.org/wikipedia/commons/9/96/Robinson_projection_SW.jpg",
+        ],
+    ];
+
+    let index = Math.floor(Math.random() * images.length);
+
+    const mapLink = document.querySelector("a[aria-label='world map']");
+
+    function updateWorldMap() {
+        const [href, src] = images[index];
+
+        mapLink.href = href;
+        mapLink.style.backgroundImage = `url(${src})`;
+    }
+
+    updateWorldMap();
+
+    setInterval(() => {
+        index = (index + 1) % images.length;
+        updateWorldMap();
+    }, 4000);
+</script>
+<script>
+    const weekNumber = getWeekNumber();
+
+    const quizzes = document.querySelectorAll("nav a");
+
+    const quizOfTheWeek = quizzes[weekNumber % quizzes.length];
+
+    quizOfTheWeek.dataset.highlighted = true;
+    quizOfTheWeek.setAttribute('aria-label', `${quizOfTheWeek.textContent}: quiz of the week`)
+
+    function getWeekNumber() {
+        let d = new Date();
+        // Set to nearest Thursday: current date + 4 - current day number
+        // Make Sunday's day number 7
+        d.setUTCDate(d.getUTCDate() + 4 - (d.getUTCDay() || 7));
+        // Get first day of year
+        const yearStart = new Date(Date.UTC(d.getUTCFullYear(), 0, 1));
+        // Calculate full weeks to nearest Thursday
+        const weekNo = Math.ceil(((d - yearStart) / 86400000 + 1) / 7);
+        // Return array of year and week number
+        return weekNo;
+    }
+</script>
+
+</html>
